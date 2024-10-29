@@ -11,9 +11,9 @@ contract AcademicCredential {
         string studentName;
         string collegeName;
     }
+    
 
     mapping(string => Credential) public credentials;
-
     event CredentialStored(string srn, string prn, string studentName);
 
     function storeCredential(
