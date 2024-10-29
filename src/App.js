@@ -8,11 +8,14 @@ import Dashboard from './Components/Dashboard';
 import AcademicForm from './Components/AcademicForm';
 // import AcademicCredentialsTable from './Components/AcademicTable';
 import AcademicTable from './Components/AcademicTable';
+import MyNavbar from './Components/MyNavbar';
+// import Navbar from './Components/Navbar';
 // import RegisterM from './Components/RegisterM';
 
 function App() {
   return (
     <Router>
+
       <Routes>
         {/* Route for Register component at root ("/") */}
         <Route path="/" element={<Register/>} />
@@ -20,9 +23,10 @@ function App() {
         {/* Route for Login component at "/login" */}
         <Route path="/login" element={<Login />} />
         <Route path="/otp-verification" element={<OtpVerification/>} />
-        <Route path="/dashboard" element={<Dashboard/>} />
-        <Route path="/add-credentials" element={<AcademicForm/>} />
-        <Route path="/show-credentials" element={<AcademicTable/>} />
+        <Route path="/dashboard" element={ <>       <MyNavbar/> <Dashboard/> </> } />
+        {/* <Route path="/dashboard" element={<Navbar/>} /> */}
+        <Route path="/add-credentials" element={    <> <MyNavbar/><AcademicForm/></> } />
+        <Route path="/show-credentials" element={ <><MyNavbar/><AcademicTable/></>     } />
       </Routes>
     </Router>
   );

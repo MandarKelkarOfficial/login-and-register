@@ -90,3 +90,38 @@
   margin: 20px;
   padding: 10px;
 }
+
+
+
+
+/* src/Components/Notification.css */
+/* App.css or your CSS file */
+
+.navbar {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* App.css or your CSS file */
+
+.nav-link {
+  position: relative; /* Position for the underline */
+  color: white !important; /* Ensure the text is white */
+  margin-left: 15px; /* Spacing between links */
+  overflow: hidden; /* To prevent overflow of the underline */
+}
+
+.nav-link::after {
+  content: ""; /* Required to display the pseudo-element */
+  position: absolute; /* Position it absolutely */
+  left: 50%; /* Start from the center */
+  bottom: 0; /* Align to the bottom */
+  width: 0; /* Start with width 0 */
+  height: 2px; /* Thickness of the underline */
+  background: white; /* Color of the underline */
+  transition: width 0.3s ease-in-out, left 0.3s ease-in-out; /* Animate width and position */
+}
+
+.nav-link:hover::after {
+  width: 100%; /* Expand to full width on hover */
+  left: 0; /* Move to the left */
+}
